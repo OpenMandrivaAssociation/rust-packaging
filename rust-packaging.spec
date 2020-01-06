@@ -31,9 +31,10 @@ BuildRequires:  python-devel
 BuildRequires:  python-setuptools
 %if %{with check}
 BuildRequires:  python-pytest
-BuildRequires:  cargo
 %ifnarch %{arm} %{armx} 
 BuildRequires:  python3dist(semantic-version)
+%endif
+BuildRequires:  cargo
 %endif
 Requires:       cargo
 Provides:       rust2rpm = %{version}-%{release}
