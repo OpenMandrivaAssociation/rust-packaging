@@ -1,4 +1,3 @@
-%bcond_without check
 %{?python_enable_dependency_generator}
 # https://pagure.io/koji/issue/659
 %global debug_package %{nil}
@@ -29,13 +28,8 @@ on various architectures.
 Summary:        Convert Rust packages to RPM
 BuildRequires:  python-devel
 BuildRequires:  python-setuptools
-%if %{with check}
-BuildRequires:  python-pytest
-%ifnarch %{arm} %{armx} 
-BuildRequires:  python3dist(semantic-version)
-%endif
 BuildRequires:  cargo
-%endif
+
 Requires:       cargo
 Provides:       rust2rpm = %{version}-%{release}
 %{?python_provide:%python_provide python-rust2rpm}
@@ -53,11 +47,6 @@ Provides:       rust2rpm = %{version}-%{release}
 %py_install
 install -D -p -m 0644 -t %{buildroot}%{_rpmmacrodir} data/macros.rust data/macros.cargo
 install -D -p -m 0644 -t %{buildroot}%{_fileattrsdir} data/cargo.attr
-
-%if %{with check}
-%check
-py.test-%{python_version} -vv test.py
-%endif
 
 %files
 %license LICENSE
