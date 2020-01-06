@@ -32,6 +32,7 @@ BuildRequires:  python-setuptools
 %if %{with check}
 BuildRequires:  python-pytest
 BuildRequires:  cargo
+%ifnarch %{arm} %{armx} 
 BuildRequires:  python3dist(semantic-version)
 %endif
 Requires:       cargo
