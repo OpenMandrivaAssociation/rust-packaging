@@ -15,7 +15,7 @@ Source:         https://releases.pagure.org/fedora-rust/rust2rpm/rust2rpm-%{vers
 
 # gawk is needed for stripping dev-deps in macro
 Requires:       gawk
-Requires:       python3-rust2rpm 
+Requires:       python-rust2rpm 
 Requires:       rust-srpm-macros
 Requires:       rust
 Requires:       cargo
