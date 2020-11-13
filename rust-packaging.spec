@@ -3,7 +3,7 @@
 %global debug_package %{nil}
 
 Name:           rust-packaging
-Version:        13
+Version:        15
 Release:        1
 Summary:        RPM macros for building Rust packages on various architectures
 Group:          System/Packaging
@@ -24,7 +24,7 @@ Requires:       cargo
 The package provides macros for building projects in Rust
 on various architectures.
 
-%package     -n python-rust2rpm
+%package -n python-rust2rpm
 Summary:        Convert Rust packages to RPM
 BuildRequires:  python-devel
 BuildRequires:  python-setuptools
