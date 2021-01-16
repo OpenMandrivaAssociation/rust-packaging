@@ -36,7 +36,7 @@ Provides:       rust2rpm = %{version}-%{release}
 %{summary}.
 
 %prep
-%autosetup -n rust2rpm-%{version} -p1
+%autosetup -n rust2rpm-v%{version} -p1
 
 %build
 %py_build
