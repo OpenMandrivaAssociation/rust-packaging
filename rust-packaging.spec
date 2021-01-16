@@ -3,15 +3,13 @@
 %global debug_package %{nil}
 
 Name:           rust-packaging
-Version:        15
+Version:        17
 Release:        1
 Summary:        RPM macros for building Rust packages on various architectures
 Group:          System/Packaging
 License:        MIT
 URL:            https://pagure.io/fedora-rust/rust2rpm
-Source:         https://releases.pagure.org/fedora-rust/rust2rpm/rust2rpm-%{version}.tar.xz
-# TODO: See if we can manage to keep using inplace feature
-#Patch0001:      0001-macros-Do-not-use-awk-s-inplace-feature.patch
+Source:         https://pagure.io/fedora-rust/rust2rpm/archive/v%{version}/rust2rpm-v%{version}.tar.gz
 
 # gawk is needed for stripping dev-deps in macro
 Requires:       gawk
@@ -38,7 +36,7 @@ Provides:       rust2rpm = %{version}-%{release}
 %{summary}.
 
 %prep
-%autosetup -n rust2rpm-%{version} -p1
+%autosetup -n rust2rpm-v%{version} -p1
 
 %build
 %py_build
