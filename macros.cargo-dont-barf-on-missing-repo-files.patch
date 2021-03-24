@@ -1,0 +1,13 @@
+diff -up rust2rpm-v17/data/macros.cargo.omv~ rust2rpm-v17/data/macros.cargo
+--- rust2rpm-v17/data/macros.cargo.omv~	2021-03-24 21:24:03.946474944 +0100
++++ rust2rpm-v17/data/macros.cargo	2021-03-24 21:24:55.728660145 +0100
+@@ -90,7 +90,8 @@ if %__cargo_is_lib; then
+ # so that cargo doesn't fail resolving dependencies:                \
+ # https://github.com/rust-lang/cargo/pull/6729                      \
+   %{__awk} -i inplace -v INPLACE_SUFFIX=.deps '/^\\\[((.+\\\.)?((dev|build)-)?dependencies|features)/{f=1;next} /^\\\[/{f=0}; !f' Cargo.toml \
+-  %{__cargo} package -l | grep -w -E -v 'Cargo.(lock|toml.orig)' | xargs -d '\\\n' %{__cp} --parents -a -t $REG_DIR \
++# --allow-dirty is needed because *.cargo files don't package .git and friends \
++  %{__cargo} package --allow-dirty -l | grep -w -E -v 'Cargo.(lock|toml.orig)' | xargs -d '\\\n' %{__cp} --parents -a -t $REG_DIR \
+   %{__mv} Cargo.toml{.deps,}                                        \
+   %{__cp} -a Cargo.toml $REG_DIR/Cargo.toml                         \
+   %{__rm} -f $REG_DIR/Cargo.toml.deps                               \

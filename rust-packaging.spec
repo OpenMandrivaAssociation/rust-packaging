@@ -4,12 +4,13 @@
 
 Name:           rust-packaging
 Version:        17
-Release:        1
+Release:        2
 Summary:        RPM macros for building Rust packages on various architectures
 Group:          System/Packaging
 License:        MIT
 URL:            https://pagure.io/fedora-rust/rust2rpm
 Source:         https://pagure.io/fedora-rust/rust2rpm/archive/v%{version}/rust2rpm-v%{version}.tar.gz
+Patch0:		macros.cargo-dont-barf-on-missing-repo-files.patch
 
 # gawk is needed for stripping dev-deps in macro
 Requires:       gawk
