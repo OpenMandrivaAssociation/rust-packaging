@@ -5,7 +5,7 @@
 Summary:	RPM macros for building Rust packages on various architectures
 Name:		rust-packaging
 Version:	18
-Release:	2
+Release:	3
 Group:		System/Packaging
 License:	MIT
 URL:		https://pagure.io/fedora-rust/rust2rpm
