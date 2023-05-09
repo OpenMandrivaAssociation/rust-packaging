@@ -21,6 +21,9 @@ Requires:	rust-srpm-macros
 Requires:	rust
 Requires:	cargo
 
+# Try to remain compatible with Fedora packages
+Provides:	cargo-rpm-macros = %{EVRD}
+
 %description
 The package provides macros for building projects in Rust
 on various architectures.
