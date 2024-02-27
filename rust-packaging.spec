@@ -4,7 +4,7 @@
 
 Summary:	RPM macros for building Rust packages on various architectures
 Name:		rust-packaging
-Version:	25.2
+Version:	26.1
 Release:	1
 Group:		System/Packaging
 License:	MIT
