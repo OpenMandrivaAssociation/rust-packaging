@@ -4,12 +4,13 @@
 
 Summary:	RPM macros for building Rust packages on various architectures
 Name:		rust-packaging
-Version:	26.1
+Version:	26.3
 Release:	1
 Group:		System/Packaging
 License:	MIT
 URL:		https://pagure.io/fedora-rust/rust-packaging
 Source:		https://pagure.io/fedora-rust/rust-packaging/archive/%{version}/rust-packaging-%{version}.tar.gz
+Source1:	macros.buildsys.cargo
 Patch0:		macros.cargo-dont-barf-on-missing-repo-files.patch
 ExclusiveArch:	%{rust_arches}
 
@@ -44,7 +45,7 @@ sed -i -e 's/armv7hl/armv7hnl/' macros.d/macros.rust-srpm
 %build
 
 %install
-install -D -p -m 0644 -t %{buildroot}%{_rpmmacrodir} macros.d/macros.rust macros.d/macros.cargo macros.d/macros.rust-srpm
+install -D -p -m 0644 -t %{buildroot}%{_rpmmacrodir} macros.d/macros.rust macros.d/macros.cargo macros.d/macros.rust-srpm %{S:1}
 install -D -p -m 0644 -t %{buildroot}%{_fileattrsdir} fileattrs/cargo.attr
 
 %files
@@ -55,3 +56,4 @@ install -D -p -m 0644 -t %{buildroot}%{_fileattrsdir} fileattrs/cargo.attr
 
 %files -n rust-srpm-macros
 %{_rpmmacrodir}/macros.rust-srpm
+%{_rpmmacrodir}/macros.buildsys.cargo
