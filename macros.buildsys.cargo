@@ -1,7 +1,7 @@
 %buildsystem_cargo_generate_buildrequires() \
 	echo 'BuildRequires: cargo' \
 	echo 'BuildRequires: cargo-rpm-macros' \
-	#cargo_generate_buildrequires
+	%cargo_generate_buildrequires
 
 # FIXME this should really be buildsystem_cargo_prep
 # but that would need some way to turn off buildsystem_default_prep
