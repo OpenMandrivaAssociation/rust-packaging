@@ -8,8 +8,8 @@ Version:	26.4
 Release:	1
 Group:		System/Packaging
 License:	MIT
-URL:		https://pagure.io/fedora-rust/rust-packaging
-Source:		https://pagure.io/fedora-rust/rust-packaging/archive/%{version}/rust-packaging-%{version}.tar.gz
+URL:		https://codeberg.org/rust2rpm/cargo-rpm-macros
+Source:		https://codeberg.org/rust2rpm/cargo-rpm-macros/archive/v%{version}.tar.gz#/rust-packaging-%{version}.tar.gz
 Source1:	macros.buildsys.cargo
 Patch0:		macros.cargo-dont-barf-on-missing-repo-files.patch
 ExclusiveArch:	%{rust_arches}
